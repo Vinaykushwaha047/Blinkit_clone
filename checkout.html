@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - Drinkit</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+
+  <a href="index.html" class="brand">
+    <span class="brand-icon">⚡</span>
+    Drinkit
+  </a>
+
+</header>
+
+
+<main class="checkout-page">
+
+  <h1>Checkout</h1>
+
+  <div class="checkout-layout">
+
+    <section class="checkout-form">
+
+      <h2>Delivery Details</h2>
+
+      <label>Full Name</label>
+
+      <input
+        id="customerName"
+        type="text"
+        placeholder="Enter your name"
+      >
+
+
+      <label>Mobile Number</label>
+
+      <input
+        id="customerPhone"
+        type="tel"
+        maxlength="10"
+        placeholder="10 digit mobile number"
+      >
+
+
+      <label>Delivery Address</label>
+
+      <textarea
+        id="customerAddress"
+        placeholder="House no, street, area..."
+      ></textarea>
+
+
+      <h2>Payment Method</h2>
+
+      <label class="payment-option">
+        <input
+          type="radio"
+          name="payment"
+          value="cod"
+          checked
+        >
+        Cash on Delivery
+      </label>
+
+      <label class="payment-option">
+        <input
+          type="radio"
+          name="payment"
+          value="upi"
+        >
+        UPI
+      </label>
+
+      <label class="payment-option">
+        <input
+          type="radio"
+          name="payment"
+          value="card"
+        >
+        Credit / Debit Card
+      </label>
+
+
+      <button
+        onclick="placeOrder()"
+        class="checkout-btn"
+      >
+        Place Order
+      </button>
+
+    </section>
+
+
+    <aside class="bill">
+
+      <h2>Order Summary</h2>
+
+      <div id="checkoutSummary"></div>
+
+      <hr>
+
+      <div class="bill-row">
+        <span>Delivery</span>
+        <strong>₹20</strong>
+      </div>
+
+      <div class="bill-row">
+        <span>Handling</span>
+        <strong>₹5</strong>
+      </div>
+
+      <div class="bill-row grand-total">
+        <span>Total</span>
+        <strong id="checkoutTotal">₹0</strong>
+      </div>
+
+    </aside>
+
+  </div>
+
+</main>
+
+
+<div id="successModal" class="modal">
+
+  <div class="success-card">
+
+    <div class="success-icon">✓</div>
+
+    <h2>Order Placed!</h2>
+
+    <p>Your Drinkit order has been confirmed.</p>
+
+    <strong id="orderNumber"></strong>
+
+    <button onclick="goHome()" class="primary-btn">
+      Continue Shopping
+    </button>
+
+  </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

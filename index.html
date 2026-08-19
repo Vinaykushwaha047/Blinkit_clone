@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drinkit - Groceries in Minutes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <a href="index.html" class="brand">
+    <span class="brand-icon">⚡</span>
+    Drinkit
+  </a>
+
+  <div class="location" onclick="changeLocation()">
+    <small>Delivering to</small>
+    <strong id="locationText">Huzurganj</strong>
+  </div>
+
+  <div class="search-box">
+    <span>🔍</span>
+    <input
+      id="globalSearch"
+      type="text"
+      placeholder="Search for groceries, snacks and more..."
+      autocomplete="off"
+    >
+  </div>
+
+  <a href="cart.html" class="cart-button">
+    🛒 Cart
+    <span id="cartCount">0</span>
+  </a>
+</header>
+
+
+<main>
+
+  <section class="hero">
+    <div class="hero-content">
+      <span class="badge">⚡ QUICK DELIVERY</span>
+
+      <h1>
+        Groceries delivered<br>
+        in minutes.
+      </h1>
+
+      <p>
+        Fresh groceries, beverages, snacks and daily essentials
+        delivered straight to your doorstep.
+      </p>
+
+      <a href="products.html" class="primary-btn">
+        Start Shopping →
+      </a>
+    </div>
+
+    <div class="hero-visual">
+      <div class="basket">🛒</div>
+      <div class="food-icons">🥦 🍎 🥛 🍪 🧃</div>
+    </div>
+  </section>
+
+
+  <section class="section">
+
+    <div class="section-header">
+      <h2>Shop by Category</h2>
+      <a href="products.html">View all →</a>
+    </div>
+
+    <div class="category-grid">
+
+      <button onclick="goCategory('fruits')">
+        <span>🍎</span>
+        Fruits
+      </button>
+
+      <button onclick="goCategory('vegetables')">
+        <span>🥦</span>
+        Vegetables
+      </button>
+
+      <button onclick="goCategory('dairy')">
+        <span>🥛</span>
+        Dairy
+      </button>
+
+      <button onclick="goCategory('snacks')">
+        <span>🍪</span>
+        Snacks
+      </button>
+
+      <button onclick="goCategory('beverages')">
+        <span>🧃</span>
+        Beverages
+      </button>
+
+      <button onclick="goCategory('personal')">
+        <span>🧴</span>
+        Personal Care
+      </button>
+
+    </div>
+  </section>
+
+
+  <section class="section">
+
+    <div class="section-header">
+      <h2>Popular Products</h2>
+      <a href="products.html">View all →</a>
+    </div>
+
+    <div id="homeProducts" class="product-grid"></div>
+
+  </section>
+
+
+  <section class="features">
+
+    <div>
+      <span>⚡</span>
+      <h3>Fast Delivery</h3>
+      <p>Get your essentials delivered quickly.</p>
+    </div>
+
+    <div>
+      <span>🥬</span>
+      <h3>Fresh Products</h3>
+      <p>Quality groceries selected for you.</p>
+    </div>
+
+    <div>
+      <span>💰</span>
+      <h3>Best Prices</h3>
+      <p>Great deals on everyday essentials.</p>
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+  <div>
+    <h2>⚡ Drinkit</h2>
+    <p>Your everyday grocery delivery partner.</p>
+  </div>
+
+  <div>
+    <h4>Company</h4>
+    <a href="#">About</a>
+    <a href="#">Careers</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <div>
+    <h4>Support</h4>
+    <a href="#">Help Center</a>
+    <a href="#">Privacy</a>
+    <a href="#">Terms</a>
+  </div>
+</footer>
+
+
+<div id="toast" class="toast"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
