@@ -3,172 +3,214 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Drinkit - Groceries in Minutes</title>
+  <title>30,000+ products delivered to your doorstep | Blinkit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="./favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-<header class="header">
-  <a href="index.html" class="brand">
-    <span class="brand-icon">⚡</span>
-    Drinkit
-  </a>
+  <!-- Top Header Navigation -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="brand-group">
+        <a href="#" class="brand-logo" id="brandLogo">blink<span>it</span></a>
+        <div class="delivery-widget" id="deliveryWidget">
+          <span class="delivery-time">Delivery in 8 minutes</span>
+          <span class="delivery-address">Unit 608, TOWER A, Unitech B... ▾</span>
+        </div>
+      </div>
 
-  <div class="location" onclick="changeLocation()">
-    <small>Delivering to</small>
-    <strong id="locationText">Huzurganj</strong>
-  </div>
+      <!-- Live Search Bar -->
+      <div class="search-container">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="globalSearchInput" class="search-input-box" placeholder='Search "paneer"'>
+      </div>
 
-  <div class="search-box">
-    <span>🔍</span>
-    <input
-      id="globalSearch"
-      type="text"
-      placeholder="Search for groceries, snacks and more..."
-      autocomplete="off"
-    >
-  </div>
+      <div class="nav-actions">
+        <button class="btn-login" id="openLoginBtn">Login</button>
+        <button class="btn-cart" id="openCartBtn">
+          <span>🛒</span>
+          <span id="navCartLabel">My Cart</span>
+        </button>
+      </div>
+    </div>
+  </header>
 
-  <a href="cart.html" class="cart-button">
-    🛒 Cart
-    <span id="cartCount">0</span>
-  </a>
-</header>
+  <!-- Main Content -->
+  <main class="main-wrapper">
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+      <div class="hero-content">
+        <a href="https://blinkit.com/dc/?collection_uuid=736e6fc2-8c33-4c35-9821-d325509aa0e5">
+        <img src="./Images/banner.jpg" alt="Stock upon daily usiensis">
+        </a>
+      </div>
+      
+    </section>
 
+    <!-- Promo Cards -->
+    <section class="promo-cards-grid">
+      <div class="promo-card c1">
+        <div>
+          <a href="https://blinkit.com/cn/null/cid/287/7275">
+          <img class="promo-btn" src="./Images/pharmacy-WEB.jpg" alt="" style="height: 100%; width: 100%;">
+          </a>
+        </div>
+      </div>
 
-<main>
+      <div class="promo-card c2">
+        <div>
+          <a href="https://blinkit.com/cn/null/cid/5/133">
+          <img src="./Images/pet_crystal_WEB-1.jpg" alt="" style="height: 100%; width: 100%;">
+          </a>
+        </div>
+      </div>
 
-  <section class="hero">
-    <div class="hero-content">
-      <span class="badge">⚡ QUICK DELIVERY</span>
+      <div class="promo-card c3">
+        <div>
+          <a href="https://blinkit.com/cn/null/cid/7/1000">
+          <img src="./Images/baby_crystal_WEB-1.jpg" alt="" style="height: 100%; width: 100%;">
+          </a>
+        </div>
+      </div>
+      </div>
+    </section>
 
-      <h1>
-        Groceries delivered<br>
-        in minutes.
-      </h1>
+    <!-- Categories Grid -->
+    <h2 class="category-section-title">Shop by Category</h2>
+    <div class="categories-20-grid" id="categoryGrid"></div>
 
-      <p>
-        Fresh groceries, beverages, snacks and daily essentials
-        delivered straight to your doorstep.
+    <!-- Product Shelf Area -->
+    <div class="products-shelf-header">
+      <h2 id="currentCategoryHeading">Dairy, Bread & Eggs</h2>
+      <span class="see-all-btn">see all</span>
+    </div>
+    <div class="products-grid" id="productsGrid"></div>
+  </main>
+
+  <!-- Login Modal -->
+  <div class="modal-backdrop" id="loginModalBackdrop">
+    <div class="login-card">
+      <button class="modal-back-btn" id="closeLoginBtn">←</button>
+      <div class="login-logo-pill">blinkit</div>
+      <h2>India's last minute app</h2>
+      <p class="sub">Log in or Sign up</p>
+      <div class="phone-input-group">
+        <span class="country-code">+91</span>
+        <input type="tel" class="phone-number-input" placeholder="Enter mobile number" maxlength="10">
+      </div>
+      <button class="btn-continue-login" id="continueLoginBtn">Continue</button>
+      <p class="login-terms">
+        By continuing, you agree to our <a href="#">Terms of service</a> & <a href="#">Privacy policy</a>
       </p>
-
-      <a href="products.html" class="primary-btn">
-        Start Shopping →
-      </a>
     </div>
-
-    <div class="hero-visual">
-      <div class="basket">🛒</div>
-      <div class="food-icons">🥦 🍎 🥛 🍪 🧃</div>
-    </div>
-  </section>
-
-
-  <section class="section">
-
-    <div class="section-header">
-      <h2>Shop by Category</h2>
-      <a href="products.html">View all →</a>
-    </div>
-
-    <div class="category-grid">
-
-      <button onclick="goCategory('fruits')">
-        <span>🍎</span>
-        Fruits
-      </button>
-
-      <button onclick="goCategory('vegetables')">
-        <span>🥦</span>
-        Vegetables
-      </button>
-
-      <button onclick="goCategory('dairy')">
-        <span>🥛</span>
-        Dairy
-      </button>
-
-      <button onclick="goCategory('snacks')">
-        <span>🍪</span>
-        Snacks
-      </button>
-
-      <button onclick="goCategory('beverages')">
-        <span>🧃</span>
-        Beverages
-      </button>
-
-      <button onclick="goCategory('personal')">
-        <span>🧴</span>
-        Personal Care
-      </button>
-
-    </div>
-  </section>
-
-
-  <section class="section">
-
-    <div class="section-header">
-      <h2>Popular Products</h2>
-      <a href="products.html">View all →</a>
-    </div>
-
-    <div id="homeProducts" class="product-grid"></div>
-
-  </section>
-
-
-  <section class="features">
-
-    <div>
-      <span>⚡</span>
-      <h3>Fast Delivery</h3>
-      <p>Get your essentials delivered quickly.</p>
-    </div>
-
-    <div>
-      <span>🥬</span>
-      <h3>Fresh Products</h3>
-      <p>Quality groceries selected for you.</p>
-    </div>
-
-    <div>
-      <span>💰</span>
-      <h3>Best Prices</h3>
-      <p>Great deals on everyday essentials.</p>
-    </div>
-
-  </section>
-
-</main>
-
-
-<footer>
-  <div>
-    <h2>⚡ Drinkit</h2>
-    <p>Your everyday grocery delivery partner.</p>
   </div>
 
-  <div>
-    <h4>Company</h4>
-    <a href="#">About</a>
-    <a href="#">Careers</a>
-    <a href="#">Contact</a>
-  </div>
+  <!-- Cart Slide-Out Drawer -->
+  <div class="cart-drawer-backdrop" id="cartBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <h3>My Cart (<span id="cartDrawerQty">0</span>)</h3>
+      <button class="close-cart-btn" id="closeCartBtn">✕</button>
+    </div>
+    <div class="cart-drawer-body" id="cartDrawerBody"></div>
+    <div class="cart-drawer-footer" id="cartDrawerFooter">
+      <button class="btn-pay-now" id="payNowBtn">
+        <span>Proceed to Pay</span>
+        <span id="cartTotalPay">₹0</span>
+      </button>
+    </div>
+  </aside>
 
-  <div>
-    <h4>Support</h4>
-    <a href="#">Help Center</a>
-    <a href="#">Privacy</a>
-    <a href="#">Terms</a>
-  </div>
-</footer>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <!-- Links Column -->
+        <div>
+          <div class="footer-col-title">Useful Links</div>
+          <div class="footer-links-3col">
+            <a href="https://blinkit.com/blog/">Blog</a><a href="https://blinkit.com/privacy">Privacy</a><a href="https://blinkit.com/terms">Terms</a>
+            <a href="https://blinkit.com/faq">FAQs</a><a href="https://blinkit.com/security">Security</a><a href="https://blinkit.com/contact">Contact</a>
+            <a href="https://blinkit.com/partner">Partner</a><a href="https://partners.blinkit.com/">Franchise</a><a href="https://seller.blinkit.com/">Seller</a>
+            <a href="https://blinkit.com/warehouse-partner">Warehouse</a><a href="https://blinkit.com/delivery">Deliver</a><a href="https://blinkit.com/resources">Resources</a>
+            <a href="https://blinkit.com/recipes">Recipes</a><a href="https://bistro.blinkit.com/">Bistro</a><a href="https://www.district.in/">District</a>
+            <a href="https://blinkit.com/ambulance">Blinkit Ambulance</a><a href="https://www.feedingindia.org/?utm_source=blinkit&source=blinkit">Feeding India</a>
+          </div>
+        </div>
 
+        <!-- Categories Column -->
+        <div>
+          <div class="footer-col-title">Categories <span class="see-all">see all</span></div>
+          <div class="footer-cat-grid">
+            <a href="#">Bath & Body</a><a href="#">Beauty & Cosmetics</a><a href="#">Health & Pharma</a>
+            <a href="#">Atta, Rice & Dal</a><a href="#">Bakery & Biscuits</a><a href="#">Electronics & Appliances</a>
+            <a href="#">Drinks & Juices</a><a href="#">Sauces & Spreads</a><a href="#">Home & Lifestyle</a>
+            <a href="#">Stationery & Games</a><a href="#">Rakhi Gifts</a><a href="#">Hair</a>
+            <a href="#">Feminine Hygiene</a><a href="#">Sexual Wellness</a><a href="#">Oil, Ghee & Masala</a>
+            <a href="#">Dry Fruits & Cereals</a><a href="#">Chips & Namkeen</a><a href="#">Tea, Coffee & Milk Drinks</a>
+            <a href="#">Paan Corner</a><a href="#">Cleaners & Repellents</a><a href="#">Print Store</a>
+            <a href="#">Skin & Face</a><a href="#">Baby Care</a><a href="#">Vegetables & Fruits</a>
+            <a href="#">Dairy, Bread & Eggs</a><a href="#">Chicken, Meat & Fish</a><a href="#">Sweets & Chocolates</a>
+            <a href="#">Instant Food</a><a href="#">Ice Creams & More</a><a href="#">Electronics</a>
+            <a href="#">E-Gift Cards</a>
+          </div>
+        </div>
+      </div>
 
-<div id="toast" class="toast"></div>
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div class="footer-copy">© Blink Commerce Private Limited, 2016-2026</div>
+        <div class="app-badges">
+          <span class="download-label">Download App</span>
+          <div class="app-btn">
+            <a href="https://apps.apple.com/in/app/blinkit-groceries-more/id960335206">
+            <img src="./Images/applestore.jpg" alt="" class="app-source">
+            </a>
+          </div>
+          <div class="app-btn">
+            <a href="https://play.google.com/store/apps/details?id=com.grofers.customerapp&hl=en_IN&gl=US&pli=1">
+            <img src="./Images/playstore.jpg" alt="" class="app-source">
+            </a>
+          </div>
+        </div>
+       <div class="social-icons">
+  <a href="https://www.facebook.com/blinkit.india/" target="_blank">
+    <i class="fab fa-facebook"></i>
+  </a>
+ <a href="https://x.com/letsblinkit/" target="_blank">
+    <i class="fab fa-twitter"></i>
+  </a>
+  <a href="https://www.instagram.com/letsblinkit/" target="_blank">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="https://www.linkedin.com/company/letsblinkit/home/" target="_blank">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+  <a href="https://www.threads.com/login/?next=https%3A%2F%2Fwww.threads.com%2F%40letsblinkit%2F" target="_blank">
+  <span class="threads-text-icon">@</span>
+</a>
+  
+</div>
+      </div>
+      <p class="disclaimer-text">
+        "Blinkit" is owned & managed by "Blink Commerce Private Limited" and is not related, linked or interconnected in whatsoever manner or nature, to "GROFFR.COM" which is a real estate services business operated by "Redstone Consultancy Services Private Limited".
+      </p>
+    </div>
 
-<script src="script.js"></script>
+    <div class="footer-bottom-bar2">
+        <p>© 2026 Vinay Kushwaha | All Rights Reserved</p>
+    </div>
 
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
+
+<img src="" alt="" style="object-fit: cover;">
+
